@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../styles/roomlist.css'
 
 class RoomList extends Component{
     
@@ -22,11 +23,14 @@ class RoomList extends Component{
     render() {
         return(
             <section className="sidebar">
-                <ul>
+                <h1>Bloc Chat</h1>
+                <ul className="room-list">
                     {
-                        this.state.rooms.map( (room, index) => {
-                            
-                        })
+                        this.state.rooms.map( (room, index) => 
+                            <li className="room" key={index}>
+                                {room.name}
+                            </li>
+                        )
                     }
                 </ul>
             </section>
