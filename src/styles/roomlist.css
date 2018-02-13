@@ -1,0 +1,35 @@
+h1 {
+    text-align: center;
+    font-size: 40px;
+    color: #ffffff;
+}
+
+.sidebar {
+    float:left;
+    box-sizing: border-box;
+    width: 17%;
+    height: 100vh;
+    background-color: rgb(23, 67, 189);
+    background: rgb(206,219,233);
+    background: rgb(206,219,233);
+    background: -moz-linear-gradient(45deg, rgb(206,219,233) 0%, rgb(170,197,222) 12%, rgb(58,132,195) 32%, rgb(65,154,214) 50%, rgb(75,184,240) 66%, rgb(58,139,194) 84%, rgb(38,85,139) 100%);
+    background: -webkit-linear-gradient(45deg, rgb(206,219,233) 0%,rgb(170,197,222) 12%,rgb(58,132,195) 32%,rgb(65,154,214) 50%,rgb(75,184,240) 66%,rgb(58,139,194) 84%,rgb(38,85,139) 100%);
+    background: linear-gradient(45deg, rgb(206,219,233) 0%,rgb(170,197,222) 12%,rgb(58,132,195) 32%,rgb(65,154,214) 50%,rgb(75,184,240) 66%,rgb(58,139,194) 84%,rgb(38,85,139) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedbe9', endColorstr='#26558b',GradientType=1 );
+}
+
+.room{
+    list-style-type: none;
+    text-align: left;
+    font-weight: 1.5rem;
+    font-size: 20px;
+    margin-bottom: 1em;
+    color: #ffffff;
+    width: 8em;
+}
+
+.room:hover {
+    cursor: pointer;
+    background-color: rgba(3, 12, 136, 0.651);
+}
+
