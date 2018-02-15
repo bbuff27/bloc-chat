@@ -6,6 +6,7 @@ class RoomList extends Component{
     constructor(props){
         super(props);
         this.state = {
+            newRoomName: "",
             rooms: []
         };
 
@@ -19,11 +20,27 @@ class RoomList extends Component{
             this.setState({ rooms: this.state.rooms.concat( rooms ) });
         });
     }
+
+    handleChange(e){
+        this.setState({ newRoomName: e.target.value })
+    }
+
+    createRoom(e){
+        e.preventDefault();
+        if(!this.state.newRoomName) { return; }
+        const newRoom = { name: this.state.newRoomName};
+        this.roomsRef.push({ newRoom });
+        this.setState({ rooms: [...this.state.rooms, newRoom], newRoomName: "" });
+    }
     
     render() {
         return(
             <section className="sidebar">
                 <h1>Bloc Chat</h1>
+                <form onSubmit={(e) => this.createRoom(e)}>
+                    <input type="text" placeholder="New Room" value={this.state.newRoomName} onChange={(e) => this.handleChange(e)} />
+                    <input type="submit" value="Add" />
+                </form>
                 <ul className="room-list">
                     {
                         this.state.rooms.map( (room, index) => 
