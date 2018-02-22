@@ -33,7 +33,15 @@ class App extends Component {
     return (
       <div className="App">
           <RoomList firebase={firebase} activeRoom={this.state.activeRoom} setActiveRoom={(room) => this.setActiveRoom(room)} />
-          <MessageList firebase={firebase} />
+          <main>
+            <section className="messages">
+            {
+              this.state.activeRoom 
+              ? <MessageList firebase={firebase} activeRoom={this.state.activeRoom} />
+              : <h3>Select a room to start!</h3>
+            }
+              </section>
+          </main>
       </div>
     );
   }
