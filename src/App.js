@@ -21,12 +21,13 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      activeRoom: null
+      activeRoomId: null
     }
   }
 
-  setActiveRoom(room){
-    this.setState({ activeRoom: room });
+  setActiveRoom(e){
+    const roomId = e.target.id
+    this.setState({ activeRoomId: roomId });
   }
 
   render() {
