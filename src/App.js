@@ -33,12 +33,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-          <RoomList firebase={firebase} activeRoom={this.state.activeRoom} setActiveRoom={(room) => this.setActiveRoom(room)} />
+          <RoomList firebase={firebase} activeRoom={this.state.activeRoomId} setActiveRoom={(e) => this.setActiveRoom(e)} />
           <main>
             <section className="messages">
             {
-              this.state.activeRoom 
-              ? <MessageList firebase={firebase} activeRoom={this.state.activeRoom} />
+              this.state.activeRoomId
+              ? <MessageList firebase={firebase} activeRoom={this.state.activeRoomId} />
               : <h3>Select a room to start!</h3>
             }
               </section>

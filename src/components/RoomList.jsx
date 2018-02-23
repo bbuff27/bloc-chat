@@ -10,7 +10,7 @@ class RoomList extends Component{
             rooms: [],
         };
 
-        this.roomsRef = this.props.firebase.database().ref('rooms');
+        this.roomsRef = this.props.firebase.database().ref("rooms");
     }
 
     componentDidMount(){
@@ -43,8 +43,8 @@ class RoomList extends Component{
                 <ul className="room-list">
                     {
                         this.state.rooms.map( (room, index) => 
-                            <li className="room" key={index} id={room.id} onClick={ this.props.setActiveRoom }>
-                                {room.id}
+                            <li className="room" key={index} id={room.key} onClick={ this.props.setActiveRoom }>
+                                {room.name}
                             </li>
                         )
                     }
