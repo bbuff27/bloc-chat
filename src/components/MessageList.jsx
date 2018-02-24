@@ -13,7 +13,7 @@ class MessageList extends Component{
     }
 
     componentDidMount(){
-        this.messagesRef.orderByChild(this.props.activeRoom).equalTo(this.props.activeRoom).on("child_added", snapshot =>{
+        this.messagesRef.child("messages").orderByChild(this.props.activeRoomId).equalTo(this.props.activeRoomId).on("child_added", snapshot =>{
             const message = snapshot.val();
             message.key = snapshot.key;
             this.setState({ messages: this.state.messages.concat(message) })
