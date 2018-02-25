@@ -12,8 +12,8 @@ class MessageList extends Component{
         this.messagesRef = this.props.firebase.database().ref("messages");
     }
 
-    componentDidMount(){
-        this.messagesRef.child("messages").orderByChild(this.props.activeRoomId).equalTo(this.props.activeRoomId).on("child_added", snapshot =>{
+    componentDidMount() {
+        this.messagesRef.on("child_added", snapshot => {
             const message = snapshot.val();
             message.key = snapshot.key;
             this.setState({ messages: this.state.messages.concat(message) })
@@ -23,15 +23,24 @@ class MessageList extends Component{
     render(){
         return(
             <section className="message-list">
-                <h3>{this.props.activeRoomId}</h3>
                 <ul className="messages" >
                     {
-                        this.state.messages.map( (message, index) =>
-                            <li className="message" key={index}>
-                                <div><span className="username">{message.userName}</span><span className="time-sent">{message.sentAt}</span></div>
-                                <div className="content">{message.content}</div>
-                            </li>
-                        )
+                        this.state.messages.map( (message, index) => {
+                        if(message.roomId === this.props.activeRoomId){
+                            return(
+                                <li className="message" key={index}>
+                                    <div className="message-info">
+                                        <div className="username">{message.userName}</div>
+                                        <div>
+                                        <span className="message-content">{message.content}</span>
+                                        <span className="time-sent">{message.sentAt}</span>
+                                        </div>
+                                    </div>
+                                    
+                                </li>
+                                )
+                            }
+                        })
                     }
                 </ul>
             </section>

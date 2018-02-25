@@ -26,7 +26,7 @@ class App extends Component {
   }
 
   setActiveRoom(e){
-    const roomId = e.target.id
+    const roomId = e.target.id;
     this.setState({ activeRoomId: roomId });
   }
 
@@ -35,7 +35,7 @@ class App extends Component {
       <div className="App">
           <RoomList firebase={firebase} activeRoom={this.state.activeRoomId} setActiveRoom={(e) => this.setActiveRoom(e)} />
           <main>
-            <section className="messages">
+            <section className="message-display">
             {
               this.state.activeRoomId
               ? <MessageList firebase={firebase} activeRoomId={this.state.activeRoomId} />
