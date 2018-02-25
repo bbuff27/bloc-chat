@@ -2,6 +2,7 @@ h1 {
     text-align: center;
     font-size: 40px;
     color: #ffffff;
+    margin-top: 10px;
 }
 
 .sidebar {
@@ -19,10 +20,10 @@ h1 {
 }
 
 .room{
-    list-style-type: none;
+    margin-top: 6px;
     text-align: left;
     font-weight: 1.5rem;
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 1em;
     color: #ffffff;
     width: 8em;
@@ -30,6 +31,17 @@ h1 {
 
 .room:hover {
     cursor: pointer;
+    background-color: rgba(3, 12, 136, 0.651);
+}
+
+.active-room{
+    text-align: left;
+    margin-top: 8px;
+    font-weight: 2.5rem;
+    font-size: 26px;
+    margin-bottom: 1em;
+    color: #ffffff;
+    width: 7.5em;
     background-color: rgba(3, 12, 136, 0.651);
 }
 
