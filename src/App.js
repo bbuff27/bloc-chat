@@ -19,16 +19,21 @@ import User from './components/User.jsx';
 
 class App extends Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      activeRoomId: null
+      activeRoomId: null,
+      user: null
     }
   }
 
-  setActiveRoom(e){
+  setActiveRoom(e) {
     const roomId = e.target.id;
     this.setState({ activeRoomId: roomId });
+  }
+
+  setUser(user) {
+    this.setState({ user: user })
   }
 
   render() {
@@ -36,6 +41,7 @@ class App extends Component {
       <div className="App">
           <RoomList firebase={firebase} activeRoom={this.state.activeRoomId} setActiveRoom={(e) => this.setActiveRoom(e)} />
           <main>
+            <User firebase={firebase} setUser={(user) => this.setUser(user)} user={this.state.user} />
             <section className="message-display">
             {
               this.state.activeRoomId
