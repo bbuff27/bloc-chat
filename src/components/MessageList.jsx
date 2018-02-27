@@ -40,6 +40,11 @@ class MessageList extends Component {
         this.setState({ newMessage: "" })
     }
 
+    convertTime(unix) {
+        const humanTime = new Date(unix);
+        return humanTime.toLocaleString();
+    }
+
     render() {
         return(
             <section className="message-list">
@@ -53,7 +58,7 @@ class MessageList extends Component {
                                         <div className="username">{message.userName}:</div>
                                         <div>
                                         <span className="message-content">{message.content}</span>
-                                        <span className="time-sent">{message.sentAt}</span>
+                                        <span className="time-sent">{this.convertTime(message.sentAt)}</span>
                                         </div>
                                     </div>
                                 </li>
