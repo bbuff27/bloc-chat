@@ -45,7 +45,7 @@ class App extends Component {
             <section className="message-display">
             {
               this.state.activeRoomId
-              ? <MessageList firebase={firebase} activeRoomId={this.state.activeRoomId} />
+              ? <MessageList firebase={firebase} activeRoomId={this.state.activeRoomId} user={this.state.user} />
               : <h3>Select a room to start!</h3>
             }
               </section>
