@@ -55,7 +55,7 @@ class MessageList extends Component {
                             return(
                                 <li className="message" key={index}>
                                     <div className="message-info">
-                                        <div className="username">{message.userName}:</div>
+                                        <div className="username"><strong>{message.userName}:</strong></div>
                                         <div>
                                         <span className="message-content">{message.content}</span>
                                         <span className="time-sent">{this.convertTime(message.sentAt)}</span>
@@ -67,9 +67,14 @@ class MessageList extends Component {
                         })
                     }
                 </ul>
-                <form onSubmit={(e) => this.sendMessage(e)}>
-                    <input type="text" className="message-input" placeholder="New Message..." value={this.state.newMessage} onChange={(e) => this.handleChange(e)} />
-                    <input type="submit" value="Send" />
+                <form className="new-message" onSubmit={(e) => this.sendMessage(e)}>
+                    <input 
+                        type="text" 
+                        className="message-input" 
+                        placeholder="New Message..." 
+                        value={this.state.newMessage} 
+                        onChange={(e) => this.handleChange(e)} 
+                        />
                 </form>
             </section>
         );

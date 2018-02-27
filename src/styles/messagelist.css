@@ -1,3 +1,10 @@
+.new-message{
+    display: inline-block;
+    position: fixed;
+    bottom: 0px;
+    left: 16em;
+}
+
 .message-list {
     height: 100vh;
     width: 100%;
@@ -17,15 +24,21 @@
 .time-sent {
     float: right;
     font-weight: 120px;
-    font-size: 20px;
+    font-size: 16px;
     margin-right: 10px
 }
 
 .message-content {
-    font-size: 20px
+    font-size: 16px
 }
 
 .username {
     font-size: 18px;
     margin-bottom: 6px;
+}
+
+.message-input {
+    width: 54em;
+    height: 30px;
+    font-size: 22px;
 }
